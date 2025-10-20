@@ -83,6 +83,8 @@ code { background: var(--brand-50); padding: 2px 6px; border-radius: 6px; }
 .faq-question:hover { background: var(--brand-50); }
 .faq-icon { font-size: 20px; color: var(--brand); font-weight: bold; }
 .faq-answer { display: none; padding: 20px; background: #ffffff; border: 1px solid var(--border); border-top: none; border-radius: 0 0 12px 12px; margin-top: -1px; }
+.faq-answer p { margin: 0 0 12px; }
+.faq-answer p:last-child { margin-bottom: 0; }
 
 /* Dividers & footer */
 hr { border: 0; border-top: 1px solid var(--border); margin: 40px 0; }
