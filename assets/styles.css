@@ -34,7 +34,7 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); fon
 
 /* Hero */
 .hero { padding: 96px 0 56px; text-align: center; background: var(--bg); }
-.hero h1 { font-size: 56px; line-height: 1.1; margin: 0 0 16px; color: var(--brand); letter-spacing: -0.5px; }
+.hero h1 { font-size: 56px; line-height: 1.1; margin: 0 0 16px; color: #595959; letter-spacing: -0.5px; }
 .subtitle { color: var(--muted); font-size: 20px; margin: 0 0 28px; }
 
 /* Buttons */
