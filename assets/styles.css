@@ -43,13 +43,13 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); fon
 
 /* Buttons */
 .cta { display: inline-block; background: var(--brand); color: #ffffff; padding: 14px 22px; border-radius: 12px; font-weight: 700; text-decoration: none; box-shadow: var(--shadow); border: 1px solid transparent; transition: filter .15s ease, transform .15s ease, background-color .15s ease; }
-.cta:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.cta:hover { filter: brightness(1.15); transform: translateY(-3px); }
 .cta:focus { outline: 3px solid var(--brand-50); outline-offset: 2px; }
 .cta--outline { background: #ffffff; color: var(--brand); border-color: var(--brand); box-shadow: none; }
-.cta--outline:hover { background: var(--brand-50); }
+.cta--outline:hover { background: var(--brand-50); filter: brightness(1.1); transform: translateY(-3px); }
 
 /* Sections */
-.section { padding: 72px 0 88px; }
+.section { padding: 72px 0; }
 .section:nth-of-type(odd) { background: var(--surface); }
 
 /* Headings */
@@ -59,12 +59,13 @@ h3 { font-size: 28px; }
 h4 { font-size: 22px; }
 
 /* Text elements */
-p { margin: 0 0 16px; }
+p { margin: 0 0 24px; }
 ul { margin: 0 0 16px 20px; }
 code { background: var(--brand-50); padding: 2px 6px; border-radius: 6px; }
 
 /* Cards & pills (for future reuse) */
-.card { background: #ffffff; border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 24px; }
+.card { background: #ffffff; border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 32px; max-width: 800px; margin: 0 auto; }
+.intro-section .card { padding: 32px; }
 .pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: var(--brand-50); color: var(--brand); font-weight: 600; font-size: 14px; }
 
 /* Grids */
@@ -73,7 +74,10 @@ code { background: var(--brand-50); padding: 2px 6px; border-radius: 6px; }
 }
 
 /* Intro section */
-.section.intro-section { background: #EFE8F4 !important; padding-top: 0; }
+.section.intro-section { background: #EFE8F4 !important; }
+
+/* Bio section */
+.bio-section { background: white; }
 
 /* Bonus section */
 .bonuses-section { background: #efe8f4; }
@@ -81,8 +85,8 @@ code { background: var(--brand-50); padding: 2px 6px; border-radius: 6px; }
 .bonus-image img { max-width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow); }
 
 /* Instructor photo */
-.instructor-photo { margin: 16px 0; text-align: center; }
-.instructor-photo img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; box-shadow: var(--shadow); }
+.instructor-photo { margin: 16px 0; text-align: left; }
+.instructor-photo img { width: 360px; height: 360px; border-radius: 50px; object-fit: cover; box-shadow: var(--shadow); }
 
 /* FAQ collapsible */
 .faq-item { margin: 16px 0; }
