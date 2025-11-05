@@ -51,27 +51,79 @@ add_header Referrer-Policy "strict-origin-when-cross-origin" always;
 add_header Permissions-Policy "geolocation=(), microphone=(), camera=()" always;
 ```
 
-### For Cloudflare/CDN:
+### For GitHub Pages + Cloudflare (RECOMMENDED FOR YOUR SETUP):
 
-If using Cloudflare or another CDN:
-1. Enable SSL/TLS mode: "Full" or "Full (strict)"
-2. Enable "Always Use HTTPS"
-3. Enable "HTTP Strict Transport Security (HSTS)"
-4. Configure security headers in the CDN dashboard
+Since you're using GitHub Pages (I can see `server: GitHub.com` in your headers), you cannot set HTTP headers directly. However, if you're using Cloudflare (or want to use it), you can add headers:
+
+**Option 1: Cloudflare Transform Rules (Easiest)**
+
+1. Go to Cloudflare Dashboard → Rules → Transform Rules → Modify Response Header
+2. Create a rule for your domain `go.strategybreakdowns.com`
+3. Add these headers one by one:
+
+**Header 1:**
+- **Name**: `Strict-Transport-Security`
+- **Value**: `max-age=31536000; includeSubDomains; preload`
+- **Action**: Set static
+
+**Header 2:**
+- **Name**: `X-Frame-Options`
+- **Value**: `SAMEORIGIN`
+- **Action**: Set static
+
+**Header 3:**
+- **Name**: `X-Content-Type-Options`
+- **Value**: `nosniff`
+- **Action**: Set static
+
+**Header 4:**
+- **Name**: `Referrer-Policy`
+- **Value**: `strict-origin-when-cross-origin`
+- **Action**: Set static
+
+**Header 5:**
+- **Name**: `Permissions-Policy`
+- **Value**: `geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), fullscreen=(self)`
+- **Action**: Set static
+
+**Header 6:**
+- **Name**: `Content-Security-Policy`
+- **Value**: `default-src 'self'; script-src 'self' https://datafa.st https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://datafa.st; frame-ancestors 'self';`
+- **Action**: Set static
+
+**Header 7:**
+- **Name**: `Cross-Origin-Embedder-Policy`
+- **Value**: `require-corp`
+- **Action**: Set static
+
+**Header 8:**
+- **Name**: `Cross-Origin-Opener-Policy`
+- **Value**: `same-origin`
+- **Action**: Set static
+
+**Header 9:**
+- **Name**: `Cross-Origin-Resource-Policy`
+- **Value**: `same-origin`
+- **Action**: Set static
+
+**Option 2: Cloudflare Workers (Advanced)**
+
+Create a Cloudflare Worker that adds headers. See Cloudflare Workers documentation.
+
+**Option 3: Switch to Netlify**
+
+If you switch to Netlify for hosting, the `_headers` file I created will automatically apply. Netlify reads `_headers` files automatically.
+
+**Cloudflare SSL/TLS Settings:**
+1. Go to SSL/TLS → Overview
+2. Set encryption mode to "Full" or "Full (strict)"
+3. Enable "Always Use HTTPS" (SSL/TLS → Edge Certificates)
+4. Enable "HTTP Strict Transport Security (HSTS)" (SSL/TLS → Edge Certificates → scroll to HSTS)
 
 ### For Netlify/Vercel:
 
-Add a `_headers` file (Netlify) or `vercel.json` configuration:
-
-**Netlify (`_headers` file):**
-```
-/*
-  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), microphone=(), camera=()
-```
+**Netlify:**
+I've created a `_headers` file in your project root. If you deploy to Netlify, it will automatically use this file to set headers. Just deploy and the headers will be active!
 
 **Vercel (`vercel.json`):**
 ```json
