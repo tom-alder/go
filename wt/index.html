@@ -574,7 +574,7 @@
       <div class="container">
         <h2>FAQs</h2>
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
+          <button class="faq-question">
             <span>What exactly is Websites &amp; Traffic?</span>
             <span class="faq-icon">+</span>
           </button>
@@ -585,7 +585,7 @@
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
+          <button class="faq-question">
             <span>Is this just for competitive analysis?</span>
             <span class="faq-icon">+</span>
           </button>
@@ -605,7 +605,7 @@
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
+          <button class="faq-question">
             <span>Is this just for marketers and SEO specialists?</span>
             <span class="faq-icon">+</span>
           </button>
@@ -616,7 +616,7 @@
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
+          <button class="faq-question">
             <span>I've never used these types of tools or analysed website traffic before. Will this work for me?</span>
             <span class="faq-icon">+</span>
           </button>
@@ -627,7 +627,7 @@
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
+          <button class="faq-question">
             <span>Do the tools in the tutorials cost money?</span>
             <span class="faq-icon">+</span>
           </button>
@@ -639,7 +639,7 @@
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
+          <button class="faq-question">
             <span>How long will it take me to see results?</span>
             <span class="faq-icon">+</span>
           </button>
@@ -650,7 +650,7 @@
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
+          <button class="faq-question">
             <span>How is this different from other strategy books, courses, or YouTube tutorials?</span>
             <span class="faq-icon">+</span>
           </button>
@@ -680,7 +680,7 @@
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
+          <button class="faq-question">
             <span>Why start with Websites &amp; Traffic instead of another module?</span>
             <span class="faq-icon">+</span>
           </button>
@@ -697,7 +697,7 @@
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
+          <button class="faq-question">
             <span>I'm worried I won't have time to complete it. What if I buy it and never use it?</span>
             <span class="faq-icon">+</span>
           </button>
@@ -716,7 +716,7 @@
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
+          <button class="faq-question">
             <span>Does this work for my industry / company / role?</span>
             <span class="faq-icon">+</span>
           </button>
@@ -729,7 +729,7 @@
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
+          <button class="faq-question">
             <span>What if I'm more senior / junior than your target audience?</span>
             <span class="faq-icon">+</span>
           </button>
@@ -741,7 +741,7 @@
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
+          <button class="faq-question">
             <span>Can I expense this through my company's L&amp;D budget?</span>
             <span class="faq-icon">+</span>
           </button>
@@ -752,7 +752,7 @@
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
+          <button class="faq-question">
             <span>When does the cart open and close?</span>
             <span class="faq-icon">+</span>
           </button>
@@ -771,22 +771,6 @@
       </div>
     </section>
     <footer class="footer"><div class="container">© Strategy Breakdowns</div></footer>
-    <script>
-      function toggleFaq(button) {
-        const faqItem = button.parentElement;
-        const answer = faqItem.querySelector('.faq-answer');
-        const icon = button.querySelector('.faq-icon');
-        
-        if (answer.style.display === 'block') {
-          answer.style.display = 'none';
-          icon.textContent = '+';
-          button.classList.remove('active');
-        } else {
-          answer.style.display = 'block';
-          icon.textContent = '−';
-          button.classList.add('active');
-        }
-      }
-    </script>
+    <script src="/wt/faq.js"></script>
   </body>
 </html>
