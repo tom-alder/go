@@ -268,7 +268,7 @@ hr { border: 0; border-top: 1px solid var(--border); margin: 40px 0; }
   }
   
   /* Fix specific inline styles that need override */
-  img[alt*="Websites & Traffic Course Preview"] { 
+  img[alt*="The High-Impact Strategist Bundle Course Preview"] { 
     width: 100% !important; 
     height: auto !important; 
   }

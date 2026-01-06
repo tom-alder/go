@@ -21,4 +21,4 @@ Create a CNAME record:
 ## Validate
 - `https://go.strategybreakdowns.com/` redirects to `/wt/`
 - `https://go.strategybreakdowns.com/wt/` loads with styles
-- CTA goes to `https://learn.strategybreakdowns.com/offers/4u7hm6rN`
+- CTA goes to `https://learn.strategybreakdowns.com/offers/BhTCSie7/checkout`
